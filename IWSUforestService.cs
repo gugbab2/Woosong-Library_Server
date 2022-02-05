@@ -150,7 +150,19 @@ namespace WCF_RESTful
                    RequestFormat = WebMessageFormat.Json,
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-        string Unity_BookSelect(string title, string type);
+       
+        string Unity_BookSelect(string title);
+
+        // 찜 목록 가져오기
+        [OperationContract]
+        [WebInvoke(UriTemplate = "Unity_BookCheckwishlist",
+                   Method = "POST",
+                   RequestFormat = WebMessageFormat.Json,
+                   ResponseFormat = WebMessageFormat.Json,
+                   BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string Unity_BookCheckwishlist(string W_id);
+
+
 
         #endregion
     }

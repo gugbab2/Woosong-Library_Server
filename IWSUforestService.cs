@@ -150,7 +150,6 @@ namespace WCF_RESTful
                    RequestFormat = WebMessageFormat.Json,
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-
         string Unity_BookSelect(string title);
 
         #endregion

@@ -541,6 +541,41 @@ namespace WCF_RESTful
             return Data; 
         }
 
+
+        public string GetBookWish(string W_id)
+        {
+            Unity_BookWish wsu = Unity_BookCheckwishlist(W_id);
+
+            return  wsu.Title + '@' + wsu.Authors;
+        }
+
+        public Unity_BookWish Unity_BookCheckwishlist(string W_id)
+        {
+            DB_Open();
+
+            string sql = string.Format("SELECT * FROM WSUlibrary_BookList WHERE title = '{0}';", W_id);
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            Unity_BookWish Data = null;
+            while (reader.Read())
+            {
+                Data = new Unity_BookWish(  
+                        (string)reader["title"],
+                        (string)reader["authors"]
+                        );
+            }
+
+            DB_Close();
+
+            if (Data == null)
+            {
+                Data = new Unity_BookWish( null, null);
+            }
+
+            return Data;
+        }
+
         #endregion
 
         #region 내부 함수들...(StudentManager에서만 사용)

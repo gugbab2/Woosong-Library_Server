@@ -228,6 +228,18 @@ namespace WCF_RESTful
                 return null;
             }
         }
+
+        public string Unity_BookCheckwishlist(string W_id)
+        {
+            try
+            {
+                return WSUManager.GetBookWish(W_id);
+            }
+            catch
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

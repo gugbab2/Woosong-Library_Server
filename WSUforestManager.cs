@@ -9,7 +9,7 @@ namespace WCF_RESTful
     //오류를 throw로 보내고 catch는 호출하는 쪽에서...
     public class WSUforestManager
     {
-        const string connstring = @"Server=DESKTOP-RMIQGMN\SQLEXPRESS;database=Test;uid=gugbab2;pwd=qwe";
+        const string connstring = @"Server=DESKTOP-NTTAC6K\SQLEXPRESS;database=WB34;uid=nayoun;pwd=nayoun";
         private SqlConnection con = new SqlConnection();
 
         #region 데이터베이스 
@@ -496,19 +496,20 @@ namespace WCF_RESTful
             return true;
         }
 
-        public string GetBookdata(int b_id)
+        public string GetBookdata(string title)
         {
-            Unity_BookList wsu = Unity_BookSelect(b_id);
+            Unity_BookList wsu = Unity_BookSelect(title);
 
-            return wsu.B_ID.ToString() + '@' + wsu.Type + '@' + wsu.Title + '@' + wsu.Author + '@' + wsu.Thumnail;
+            return wsu.B_ID.ToString() + '@' + wsu.Type + '@' + wsu.Title + '@' + wsu.Contents + '@' + wsu.Isbn + '@' + wsu.Authors + '@'
+                + wsu.Publisher + '@' + wsu.Translators + '@' + wsu.Thumbnail + '@' + wsu.Status + '@' + wsu.Bestseller.ToString();
         }
 
         // 도서 검색
-        public Unity_BookList Unity_BookSelect(int b_id)
+        public Unity_BookList Unity_BookSelect(string title)
         {
             DB_Open();
 
-            string sql = string.Format("SELECT * FROM WSUlibrary_BookList WHERE B_ID = {0};", b_id);
+            string sql = string.Format("SELECT * FROM WSUlibrary_BookList WHERE title = '{0}';", title);
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -519,8 +520,14 @@ namespace WCF_RESTful
                         (int)reader["B_ID"],
                         (string)reader["type"],
                         (string)reader["title"],
+                        (string)reader["contents"],
+                        (string)reader["isbn"],
                         (string)reader["authors"],
-                        (string)reader["thumbnail"]
+                        (string)reader["publisher"],
+                        (string)reader["translators"],
+                        (string)reader["thumbnail"],
+                        (string)reader["status"],
+                        (int)reader["bestseller"]
                         );
             }
 
@@ -528,7 +535,7 @@ namespace WCF_RESTful
 
             if (Data == null)
             {
-                Data = new Unity_BookList(-1, null, null, null, null);
+                Data = new Unity_BookList(-1, null, null, null, null, null, null, null , null , null, -1);
             }
 
             return Data; 

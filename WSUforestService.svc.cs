@@ -217,11 +217,11 @@ namespace WCF_RESTful
         }
 
         // 도서 검색
-        public string Unity_BookSelect(int b_id)
+        public string Unity_BookSelect(string title)
         {
             try
             {
-                return WSUManager.GetBookdata(b_id);
+                return WSUManager.GetBookdata(title);
             }
             catch
             {

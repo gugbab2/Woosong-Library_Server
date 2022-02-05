@@ -496,19 +496,19 @@ namespace WCF_RESTful
             return true;
         }
 
-        public string GetBookdata(int b_id)
+        public string GetBookdata(string title)
         {
-            Unity_BookList wsu = Unity_BookSelect(b_id);
+            Unity_BookList wsu = Unity_BookSelect(title);
 
             return wsu.B_ID.ToString() + '@' + wsu.Type + '@' + wsu.Title + '@' + wsu.Author + '@' + wsu.Thumnail;
         }
 
         // 도서 검색
-        public Unity_BookList Unity_BookSelect(int b_id)
+        public Unity_BookList Unity_BookSelect(string title)
         {
             DB_Open();
 
-            string sql = string.Format("SELECT * FROM WSUlibrary_BookList WHERE B_ID = {0};", b_id);
+            string sql = string.Format("SELECT * FROM WSUlibrary_BookList WHERE title = {0};", title);
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader reader = cmd.ExecuteReader();
 

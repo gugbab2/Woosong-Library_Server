@@ -542,36 +542,28 @@ namespace WCF_RESTful
         }
 
 
-        public string GetBookWish(string W_id)
-        {
-            Unity_BookWish wsu = Unity_BookCheckwishlist(W_id);
+        //public List<string> GetBookWish(string W_id)
+        //{
+        //    Unity_BookWish wsu = Unity_BookCheckwishlist(W_id);
 
-            return  wsu.Title + '@' + wsu.Authors;
-        }
+        //    return  wsu.Title + '@' + wsu.Authors;
+        //}
 
-        public Unity_BookWish Unity_BookCheckwishlist(string W_id)
+        public List<string> Unity_BookCheckwishlist(string W_id)
         {
             DB_Open();
 
-            string sql = string.Format("SELECT * FROM WSUlibrary_BookList WHERE title = '{0}';", W_id);
+            string sql = string.Format("SELECT title, authors FROM WSUlibrary_BookHeart WHERE W_ID={0};", W_id);
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader reader = cmd.ExecuteReader();
 
-            Unity_BookWish Data = null;
+            List<string> Data = new List<string>();
             while (reader.Read())
             {
-                Data = new Unity_BookWish(  
-                        (string)reader["title"],
-                        (string)reader["authors"]
-                        );
+                Data.Add( (string)reader["title"] + '@' + (string)reader["authors"] );
             }
 
             DB_Close();
-
-            if (Data == null)
-            {
-                Data = new Unity_BookWish( null, null);
-            }
 
             return Data;
         }

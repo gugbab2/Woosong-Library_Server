@@ -242,29 +242,29 @@ namespace WCF_RESTful
             }
         }
 
-        //찜목록 가져오기
-        public string Unity_BookCheckwishlist(string W_id)
+ 
+
+        public string Unity_AddWish(string W_id, string b_id)
         {
             try
             {
-                return WSUManager.Unity_BookCheckwishlist(W_id);
+                return WSUManager.Unity_AddWish(W_id, b_id);
             }
             catch
             {
-                return null;
+                return "도서찜 실패 : 이미 찜 목록에 추가되었습니다.";
             }
         }
 
-        //찜목록 갯수 가져오기
-        public string Unity_BookwishlistCount(string W_id)
+        public string Unity_RemoveWish(string W_id, string b_id)
         {
             try
             {
-                return WSUManager.Unity_BookwishlistCount(W_id);
+                return WSUManager.Unity_RemoveWish(W_id, b_id);
             }
             catch
             {
-                return null;
+                return "도서찜 해제 실패";
             }
         }
 

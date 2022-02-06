@@ -229,6 +229,18 @@ namespace WCF_RESTful
             }
         }
 
+        public string Unity_BookwishlistCount(string W_id)
+        {
+            try
+            {
+                return WSUManager.Unity_BookwishlistCount(W_id);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public List<string> Unity_BookCheckwishlist(string W_id)
         {
             try

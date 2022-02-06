@@ -162,6 +162,15 @@ namespace WCF_RESTful
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         List<string> Unity_BookCheckwishlist(string W_id);
 
+        // 찜 개수 가져오기
+        [OperationContract]
+        [WebInvoke(UriTemplate = "Unity_BookwishlistCount",
+                   Method = "POST",
+                   RequestFormat = WebMessageFormat.Json,
+                   ResponseFormat = WebMessageFormat.Json,
+                   BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string Unity_BookwishlistCount(string W_id);
+
 
 
         #endregion

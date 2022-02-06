@@ -152,6 +152,15 @@ namespace WCF_RESTful
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         string Unity_BookSelect(string title, string type);
 
+        // 베스트셀러 받아오기  
+        [OperationContract]
+        [WebInvoke(UriTemplate = "Unity_BestSeller",
+                   Method = "POST",
+                   RequestFormat = WebMessageFormat.Json,
+                   ResponseFormat = WebMessageFormat.Json,
+                   BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        List<string> Unity_Bestseller();
+
         #endregion
     }
 }

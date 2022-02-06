@@ -541,6 +541,28 @@ namespace WCF_RESTful
             return Data; 
         }
 
+        // 도서 검색
+        public List<string> Unity_BestSelect()
+        {
+            DB_Open();
+
+            string sql = string.Format("SELECT title,thumbnail,bestseller FROM WSUlibrary_BookList WHERE bestseller BETWEEN 1 AND 6 ORDER BY bestseller;");
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            List<string> Data = new List<string>();
+            while (reader.Read())
+            {
+                Data.Add((string)reader["title"] + '@' + 
+                         (string)reader["thumbnail"] + '@' + 
+                         ((int)reader["bestseller"]).ToString());
+            }
+
+            DB_Close();
+
+            return Data;
+        }
+
         #endregion
 
         #region 내부 함수들...(StudentManager에서만 사용)

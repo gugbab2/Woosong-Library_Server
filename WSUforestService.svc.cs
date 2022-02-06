@@ -228,6 +228,19 @@ namespace WCF_RESTful
                 return null;
             }
         }
+
+        // 베스트셀러 검색
+        public List<string> Unity_Bestseller()
+        {
+            try
+            {
+                return WSUManager.Unity_BestSelect();
+            }
+            catch
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

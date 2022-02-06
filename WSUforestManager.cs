@@ -9,7 +9,7 @@ namespace WCF_RESTful
     //오류를 throw로 보내고 catch는 호출하는 쪽에서...
     public class WSUforestManager
     {
-        const string connstring = @"Server=DESKTOP-RMIQGMN\SQLEXPRESS;database=Test;uid=gugbab2;pwd=qwe";
+        const string connstring = @"Server=DESKTOP-NTTAC6K\SQLEXPRESS;database=WB34;uid=nayoun;pwd=nayoun";
         private SqlConnection con = new SqlConnection();
 
         #region 데이터베이스 
@@ -604,6 +604,33 @@ namespace WCF_RESTful
                 return "0";
 
             return Data.ToString();
+        }
+
+        // 도서 찜 추가
+        public string Unity_AddWish(string W_id, string b_id)
+        {
+            // 우송대 책 리스트 검사 후 데이터 담기
+            WSUlibrary_BookList bookList = GetWSUlibrary_BookList(int.Parse(b_id));
+
+            DB_Open();
+            string sql = string.Format("INSERT INTO WSUlibrary_BookHeart(W_ID, B_ID, title, authors, thumbnail)VALUES({0},{1},'{2}','{3}','{4}');",
+                                        W_id, b_id, bookList.Title, bookList.Authors, bookList.Thumbnail);
+            ExcuteNonQuery(sql);
+            DB_Close();
+
+            return "도서찜 성공";
+        }
+
+        // 도서 찜 해제
+        public string Unity_RemoveWish(string W_id, string b_id)
+        {
+            DB_Open();
+            string sql = string.Format("DELETE FROM WSUlibrary_BookHeart WHERE W_ID={0} AND B_ID={1};",
+                                        W_id, b_id);
+            ExcuteNonQuery(sql);
+            DB_Close();
+
+            return "도서찜 해제 성공";
         }
 
         #endregion

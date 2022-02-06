@@ -162,7 +162,7 @@ namespace WCF_RESTful
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         List<string> Unity_Bestseller();
 
-        // 찜 목록 가져오기
+        // 찜 목록 가져오기 사용X
         [OperationContract]
         [WebInvoke(UriTemplate = "Unity_BookCheckwishlist",
                    Method = "POST",
@@ -171,7 +171,7 @@ namespace WCF_RESTful
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         string Unity_BookCheckwishlist(string W_id);
 
-        // 찜목록 개수 가져오기
+        // 찜목록 개수 가져오기 사용X
         [OperationContract]
         [WebInvoke(UriTemplate = "Unity_BookwishlistCount",
                    Method = "POST",
@@ -179,6 +179,25 @@ namespace WCF_RESTful
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         string Unity_BookwishlistCount(string W_id);
+
+
+        // 찜 추가
+        [OperationContract]
+        [WebInvoke(UriTemplate = "Unity_AddWish",
+                   Method = "POST",
+                   RequestFormat = WebMessageFormat.Json,
+                   ResponseFormat = WebMessageFormat.Json,
+                   BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string Unity_AddWish(string W_id, string b_id);
+
+        // 찜 해제
+        [OperationContract]
+        [WebInvoke(UriTemplate = "Unity_RemoveWish",
+                   Method = "POST",
+                   RequestFormat = WebMessageFormat.Json,
+                   ResponseFormat = WebMessageFormat.Json,
+                   BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string Unity_RemoveWish(string W_id, string b_id);
 
         #endregion
     }

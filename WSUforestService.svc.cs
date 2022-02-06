@@ -266,6 +266,30 @@ namespace WCF_RESTful
             }
         }
 
+        public string Unity_AddWish(string W_id, string b_id)
+        {
+            try
+            {
+                return WSUManager.Unity_AddWish(W_id, b_id);
+            }
+            catch
+            {
+                return "도서찜 실패 : 이미 찜 목록에 추가되었습니다.";
+            }
+        }
+
+        public string Unity_RemoveWish(string W_id, string b_id)
+        {
+            try
+            {
+                return WSUManager.Unity_RemoveWish(W_id, b_id);
+            }
+            catch
+            {
+                return "도서찜 해제 실패";
+            }
+        }
+
         #endregion
     }
 }

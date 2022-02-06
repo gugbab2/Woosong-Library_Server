@@ -563,49 +563,6 @@ namespace WCF_RESTful
             return Data;
         }
 
-        // 찜목록 가져오기
-        public string Unity_BookCheckwishlist(string W_id)
-        {
-            DB_Open();
-
-            string sql = string.Format("SELECT title, authors FROM WSUlibrary_BookHeart WHERE W_ID={0};", W_id);
-            SqlCommand cmd = new SqlCommand(sql, con);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            string Data = null;
-            while (reader.Read())
-            {
-                Data = (string)reader["title"] + '@' + (string)reader["authors"] + '@';
-            }
-
-            DB_Close();
-
-            return Data;
-        }
-
-        //찜갯수 가져오기
-        public string Unity_BookwishlistCount(string W_id)
-        {
-            DB_Open();
-
-            string sql = string.Format("SELECT COUNT(*) 'count' FROM (SELECT title, authors FROM WSUlibrary_BookHeart WHERE W_ID = {0}) as c;", W_id);
-            SqlCommand cmd = new SqlCommand(sql, con);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            int Data = 0;
-            while (reader.Read())
-            {
-                Data = (int)reader["count"];
-            }
-
-            DB_Close();
-
-            if (Data == 0)
-                return "0";
-
-            return Data.ToString();
-        }
-
         // 도서 찜 추가
         public string Unity_AddWish(string W_id, string b_id)
         {

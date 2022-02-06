@@ -9,7 +9,7 @@ namespace WCF_RESTful
     //오류를 throw로 보내고 catch는 호출하는 쪽에서...
     public class WSUforestManager
     {
-        const string connstring = @"Server=DESKTOP-NTTAC6K\SQLEXPRESS;database=WB34;uid=nayoun;pwd=nayoun";
+        const string connstring = @"Server=DESKTOP-RMIQGMN\SQLEXPRESS;database=Test;uid=gugbab2;pwd=qwe";
         private SqlConnection con = new SqlConnection();
 
         #region 데이터베이스 
@@ -541,41 +541,21 @@ namespace WCF_RESTful
             return Data; 
         }
 
-
-        public string Unity_BookwishlistCount(string W_id)
+        // 도서 검색
+        public List<string> Unity_BestSelect()
         {
             DB_Open();
 
-            string sql = string.Format("SELECT COUNT(*) 'count' FROM (SELECT title, authors FROM WSUlibrary_BookHeart WHERE W_ID = {0}) as c;", W_id);
+            string sql = string.Format("SELECT title,thumbnail,bestseller FROM WSUlibrary_BookList WHERE bestseller BETWEEN 1 AND 6 ORDER BY bestseller;");
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader reader = cmd.ExecuteReader();
 
-            int Data = 0;
+            List<string> Data = new List<string>();
             while (reader.Read())
             {
-                Data = (int)reader["count"];
-            }
-
-            DB_Close();
-
-            if (Data == 0)
-                return "0";
-
-            return Data.ToString();
-        }
-
-        public string Unity_BookCheckwishlist(string W_id)
-        {
-            DB_Open();
-
-            string sql = string.Format("SELECT title, authors FROM WSUlibrary_BookHeart WHERE W_ID={0};", W_id);
-            SqlCommand cmd = new SqlCommand(sql, con);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            string Data = null;
-            while (reader.Read())
-            {
-                Data = (string)reader["title"] + '@' + (string)reader["authors"] + '@';
+                Data.Add((string)reader["title"] + '@' + 
+                         (string)reader["thumbnail"] + '@' + 
+                         ((int)reader["bestseller"]).ToString());
             }
 
             DB_Close();

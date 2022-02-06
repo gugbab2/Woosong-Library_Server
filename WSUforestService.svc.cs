@@ -229,23 +229,12 @@ namespace WCF_RESTful
             }
         }
 
-        public string Unity_BookwishlistCount(string W_id)
+        // 베스트셀러 검색
+        public List<string> Unity_Bestseller()
         {
             try
             {
-                return WSUManager.Unity_BookwishlistCount(W_id);
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        public string Unity_BookCheckwishlist(string W_id)
-        {
-            try
-            {
-                return WSUManager.Unity_BookCheckwishlist(W_id);
+                return WSUManager.Unity_BestSelect();
             }
             catch
             {

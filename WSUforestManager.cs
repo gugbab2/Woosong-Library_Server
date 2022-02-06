@@ -541,7 +541,7 @@ namespace WCF_RESTful
             return Data; 
         }
 
-        // 도서 검색
+        // 베스트셀러 가져오기
         public List<string> Unity_BestSelect()
         {
             DB_Open();

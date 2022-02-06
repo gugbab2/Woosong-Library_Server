@@ -7,7 +7,7 @@ namespace WCF_RESTful
     public class Unity_BookList
     {
         [DataMember(Order = 0)]
-        public int B_ID { get; set; }
+        public int B_ID { get; set; } 
 
         [DataMember(Order = 1)]
         public string Type { get; set; }

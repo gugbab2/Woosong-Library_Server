@@ -242,6 +242,7 @@ namespace WCF_RESTful
             }
         }
 
+        //찜목록 가져오기
         public string Unity_BookCheckwishlist(string W_id)
         {
             try
@@ -254,6 +255,7 @@ namespace WCF_RESTful
             }
         }
 
+        //찜목록 갯수 가져오기
         public string Unity_BookwishlistCount(string W_id)
         {
             try

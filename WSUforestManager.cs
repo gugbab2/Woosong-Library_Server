@@ -564,7 +564,7 @@ namespace WCF_RESTful
             return Data.ToString();
         }
 
-        public List<string> Unity_BookCheckwishlist(string W_id)
+        public string Unity_BookCheckwishlist(string W_id)
         {
             DB_Open();
 
@@ -572,10 +572,10 @@ namespace WCF_RESTful
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader reader = cmd.ExecuteReader();
 
-            List<string> Data = new List<string>();
+            string Data = null;
             while (reader.Read())
             {
-                Data.Add( (string)reader["title"] + '@' + (string)reader["authors"] );
+                Data = (string)reader["title"] + '@' + (string)reader["authors"] + '@';
             }
 
             DB_Close();

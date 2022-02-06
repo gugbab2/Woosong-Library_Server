@@ -241,7 +241,7 @@ namespace WCF_RESTful
             }
         }
 
-        public List<string> Unity_BookCheckwishlist(string W_id)
+        public string Unity_BookCheckwishlist(string W_id)
         {
             try
             {

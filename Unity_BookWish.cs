@@ -9,9 +9,6 @@ namespace WCF_RESTful
 
             [DataMember(Order = 1)]
             public string Authors { get; set; }
-            
-            
-
 
             public Unity_BookWish(string title,string authors)
             {

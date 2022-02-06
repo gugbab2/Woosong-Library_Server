@@ -151,7 +151,7 @@ namespace WCF_RESTful
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
        
-        string Unity_BookSelect(string title);
+        string Unity_BookSelect(string title, string type);
 
         // 찜 목록 가져오기
         [OperationContract]
@@ -160,7 +160,7 @@ namespace WCF_RESTful
                    RequestFormat = WebMessageFormat.Json,
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-        string Unity_BookCheckwishlist(string W_id);
+        List<string> Unity_BookCheckwishlist(string W_id);
 
 
 

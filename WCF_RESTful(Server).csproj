@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Unity_BookList.cs" />
+    <Compile Include="Unity_BookWish.cs" />
     <Compile Include="WSUlibrary_BookList.cs" />
     <Compile Include="WSUlibrary_BookRental.cs" />
     <Compile Include="WSUPeople.cs" />

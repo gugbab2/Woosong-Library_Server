@@ -241,6 +241,31 @@ namespace WCF_RESTful
                 return null;
             }
         }
+
+        public string Unity_BookCheckwishlist(string W_id)
+        {
+            try
+            {
+                return WSUManager.Unity_BookCheckwishlist(W_id);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public string Unity_BookwishlistCount(string W_id)
+        {
+            try
+            {
+                return WSUManager.Unity_BookwishlistCount(W_id);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         #endregion
     }
 }

@@ -606,8 +606,6 @@ namespace WCF_RESTful
             return Data.ToString();
         }
 
-        
-
         #endregion
 
         #region 내부 함수들...(StudentManager에서만 사용)

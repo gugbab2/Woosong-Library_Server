@@ -489,7 +489,7 @@ namespace WCF_RESTful
         public bool UpdateCustom(int W_id, int custom)
         {
             DB_Open();
-            string sql = string.Format("UPDATE WSUforest SET character = {0} WHERE S_ID = {1};",
+            string sql = string.Format("UPDATE WSUforest SET character = {0} WHERE W_ID = {1};",
                                         custom, W_id);
             ExcuteNonQuery(sql);
             DB_Close();

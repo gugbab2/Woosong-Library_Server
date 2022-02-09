@@ -10,7 +10,7 @@ namespace WCF_RESTful
     {
         //const string connstring = @"Server=DESKTOP-0I86BTV;database=WB34;uid=yhy;pwd=yhy";
         //const string connstring = @"Server=SOEUN-LAPTOP;database=WB34;uid=cse;pwd=cse";
-        const string connstring = @"Server=DESKTOP-NTTAC6K\SQLEXPRESS;database=WB34;uid=nayoun;pwd=nayoun";
+        const string connstring = @"Server=DESKTOP-RMIQGMN\SQLEXPRESS;database=Test;uid=gugbab2;pwd=qwe";
         private SqlConnection con = new SqlConnection();
 
         #region 데이터베이스 

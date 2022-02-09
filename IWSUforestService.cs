@@ -143,6 +143,8 @@ namespace WCF_RESTful
 
         string Ply_UpdateCustom(int id, int custom);
 
+
+        #region 추가된 인터페이스 
         // 북리스트 받아오기 
         [OperationContract]
         [WebInvoke(UriTemplate = "Unity_BookSelect",
@@ -180,7 +182,7 @@ namespace WCF_RESTful
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         string Unity_RemoveWish(string W_id, string b_id);
-
+        #endregion
         #endregion
     }
 }

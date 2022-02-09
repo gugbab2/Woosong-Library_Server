@@ -216,6 +216,7 @@ namespace WCF_RESTful
             }
         }
 
+        #region 추가된 서비스
         // 도서 검색
         public string Unity_BookSelect(string title, string type)
         {
@@ -242,8 +243,7 @@ namespace WCF_RESTful
             }
         }
 
- 
-
+        //찜추가
         public string Unity_AddWish(string W_id, string b_id)
         {
             try
@@ -256,6 +256,7 @@ namespace WCF_RESTful
             }
         }
 
+        //찜해제
         public string Unity_RemoveWish(string W_id, string b_id)
         {
             try
@@ -267,7 +268,7 @@ namespace WCF_RESTful
                 return "도서찜 해제 실패";
             }
         }
-
+        #endregion
         #endregion
     }
 }

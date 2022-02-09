@@ -9,7 +9,7 @@ namespace WCF_RESTful
     //오류를 throw로 보내고 catch는 호출하는 쪽에서...
     public class WSUforestManager
     {
-        const string connstring = @"Server=DESKTOP-NTTAC6K\SQLEXPRESS;database=WB34;uid=nayoun;pwd=nayoun";
+        const string connstring = @"Server=DESKTOP-RMIQGMN\SQLEXPRESS;database=Test;uid=gugbab2;pwd=qwe";
         private SqlConnection con = new SqlConnection();
 
         #region 데이터베이스 
@@ -496,6 +496,7 @@ namespace WCF_RESTful
             return true;
         }
 
+        #region 추가된 메서드
         public string GetBookdata(string title, string type)
         {
             Unity_BookList wsu = Unity_BookSelect(title, type);
@@ -589,6 +590,7 @@ namespace WCF_RESTful
 
             return "도서찜 해제 성공";
         }
+        #endregion
 
         #endregion
 

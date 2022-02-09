@@ -24,8 +24,40 @@ namespace WCF_RESTful
             }
         }
 
+        // 도서 찜 유무 확인
+        public string WSU_BookHeartCheck(string W_id, string b_id)
+        {
+            try
+            {
+                int count = WSUManager.BookHeartCheck(int.Parse(W_id), int.Parse(b_id));
+
+                if (count == 0)
+                {
+                    return "022,찜해제상태";
+                }
+                return "021,찜상태";
+            }
+            catch
+            {
+                return "023,도서 찜 유무 확인 실패";
+            }
+        }
+
+        // 도서 대출 현황 확인
+        public string WSU_BookRentalCheck(string W_id, string b_id)
+        {
+            try
+            {
+                return WSUManager.BookRentalCheck(int.Parse(W_id), int.Parse(b_id));
+            }
+            catch
+            {
+                return "014,도서대출현황 확인 실패";
+            }
+        }
+
         // 로그인 요청
-        string IWSUforestService.WSU_Login(string W_id, string password)
+        public string WSU_Login(string W_id, string password)
         {
             return WSUManager.Login(int.Parse(W_id), password);
         }
@@ -127,13 +159,27 @@ namespace WCF_RESTful
         // 도서 반납
         public string WSU_BookReturn(string W_id, string b_id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return WSUManager.BookReturn(int.Parse(W_id), int.Parse(b_id));
+            }
+            catch
+            {
+                return "142,도서반납 실패";
+            }
         }
 
         // 도서 대출 연장
         public string WSU_BookRenew(string W_id, string b_id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return WSUManager.BookRenew(int.Parse(W_id), int.Parse(b_id));
+            }
+            catch
+            {
+                return "151,도서대출연장 실패";
+            }
         }
 
         // 도서 찜 선택
@@ -169,7 +215,7 @@ namespace WCF_RESTful
         #region 유니티 --> 서비스
 
         // 게임 접속 -> 유니티가 처음 실행될 때 호출
-        public string Ply_GameJoin(int id)
+        public string Unity_GameJoin(int id)
         {
             try
             {
@@ -185,7 +231,7 @@ namespace WCF_RESTful
         }
 
         // 게임 접속 종료 -> 유니티가 죽을 때 호출
-        public string Ply_GameUnjoin(int id)
+        public string Unity_GameUnjoin(int id)
         {
             try
             {
@@ -201,7 +247,7 @@ namespace WCF_RESTful
         }
 
         // 플레이어 커스텀 저장 및 수정 
-        public string Ply_UpdateCustom(int id, int custom)
+        public string Unity_UpdateCustom(int id, int custom)
         {
             try
             {
@@ -216,7 +262,6 @@ namespace WCF_RESTful
             }
         }
 
-        #region 추가된 서비스
         // 도서 검색
         public string Unity_BookSelect(string title, string type)
         {
@@ -243,32 +288,32 @@ namespace WCF_RESTful
             }
         }
 
-        //찜추가
-        public string Unity_AddWish(string W_id, string b_id)
+        // 찜
+        public string Unity_BookHeart(int W_id, int b_id)
         {
             try
             {
-                return WSUManager.Unity_AddWish(W_id, b_id);
+                return WSUManager.BookHeart(W_id, b_id);
             }
             catch
             {
-                return "도서찜 실패 : 이미 찜 목록에 추가되었습니다.";
+                return "171,도서찜 실패";
             }
         }
 
-        //찜해제
-        public string Unity_RemoveWish(string W_id, string b_id)
+        // 찜 해제
+        public string Unity_BookUnHeart(int W_id, int b_id)
         {
             try
             {
-                return WSUManager.Unity_RemoveWish(W_id, b_id);
+                return WSUManager.BookUnHeart(W_id, b_id);
             }
             catch
             {
-                return "도서찜 해제 실패";
+                return "181,도서찜 해제 실패";
             }
         }
-        #endregion
+
         #endregion
     }
 }

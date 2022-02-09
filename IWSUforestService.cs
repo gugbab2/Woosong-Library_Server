@@ -34,49 +34,61 @@ namespace WCF_RESTful
         ResponseFormat = WebMessageFormat.Json)]
         string WSU_LoginCheck(string W_id);
 
-        // 로그인 요청 o
+        // 도서 찜 유무 확인
+        [OperationContract]
+        [WebGet(UriTemplate = "WSU_BookHeartCheck/{W_id}/{b_id}",
+        ResponseFormat = WebMessageFormat.Json)]
+        string WSU_BookHeartCheck(string W_id, string b_id);
+
+        // 도서 대출 현황 확인
+        [OperationContract]
+        [WebGet(UriTemplate = "WSU_BookRentalCheck/{W_id}/{b_id}",
+        ResponseFormat = WebMessageFormat.Json)]
+        string WSU_BookRentalCheck(string W_id, string b_id);
+
+        // 로그인 요청
         [OperationContract]
         [WebGet(UriTemplate = "WSU_Login/{W_id}/{password}",
         ResponseFormat = WebMessageFormat.Json)]
         string WSU_Login(string W_id, string password);
 
-        // 로그아웃 요청 o
+        // 로그아웃 요청
         [OperationContract]
         [WebGet(UriTemplate = "WSU_Logout/{W_id}",
         ResponseFormat = WebMessageFormat.Json)]
         string WSU_Logout(string W_id);
 
-        // 도서 검색(상세) o
+        // 도서 검색(상세)
         [OperationContract]
         [WebGet(UriTemplate = "WSU_BookInfoSelect/{b_id}",
         ResponseFormat = WebMessageFormat.Json)]
         WSUlibrary_BookList WSU_BookInfoSelect(string b_id);
 
-        // 도서 검색 o
+        // 도서 검색
         [OperationContract]
         [WebGet(UriTemplate = "WSU_BookSelect/{type}/{data}",
         ResponseFormat = WebMessageFormat.Json)]
         List<string> WSU_BookSelect(string type, string data);
 
-        // 사람 대출 목록 o
+        // 사람 대출 목록
         [OperationContract]
         [WebGet(UriTemplate = "WSU_BookCheckOutList/{W_id}",
         ResponseFormat = WebMessageFormat.Json)]
         List<string> WSU_BookCheckOutList(string W_id);
 
-        // 사람 찜 목록 o
+        // 사람 찜 목록
         [OperationContract]
         [WebGet(UriTemplate = "WSU_BookHeartList/{W_id}",
         ResponseFormat = WebMessageFormat.Json)]
         List<string> WSU_BookHeartList(string W_id);
 
-        // 도서 베스트셀러 목록 o
+        // 도서 베스트셀러 목록
         [OperationContract]
         [WebGet(UriTemplate = "WSU_BookBestSellerList",
         ResponseFormat = WebMessageFormat.Json)]
         List<string> WSU_BookBestSellerList();
 
-        // 도서 대출 o
+        // 도서 대출
         [OperationContract]
         [WebGet(UriTemplate = "WSU_BookCheckOut/{W_id}/{b_id}",
         ResponseFormat = WebMessageFormat.Json)]
@@ -106,45 +118,40 @@ namespace WCF_RESTful
         ResponseFormat = WebMessageFormat.Json)]
         string WSU_BookUnHeart(string W_id, string b_id);
 
-
-
-
         #endregion
 
         #region 유니티 --> 서비스
 
         // 게임접속 요청
         [OperationContract]
-        [WebInvoke(UriTemplate = "Ply_GameJoin",
+        [WebInvoke(UriTemplate = "Unity_GameJoin",
                    Method = "POST",
                    RequestFormat = WebMessageFormat.Json,
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
 
-        string Ply_GameJoin(int id);
+        string Unity_GameJoin(int id);
 
         // 게임접속종료 요청
         [OperationContract]
-        [WebInvoke(UriTemplate = "Ply_GameUnjoin",
+        [WebInvoke(UriTemplate = "Unity_GameUnjoin",
                    Method = "POST",
                    RequestFormat = WebMessageFormat.Json,
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
 
-        string Ply_GameUnjoin(int id);
+        string Unity_GameUnjoin(int id);
 
         // 플레이어 커스텀 저장 및 수정 
         [OperationContract]
-        [WebInvoke(UriTemplate = "Ply_UpdateCustom",
+        [WebInvoke(UriTemplate = "Unity_UpdateCustom",
                    Method = "POST",
                    RequestFormat = WebMessageFormat.Json,
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
 
-        string Ply_UpdateCustom(int id, int custom);
+        string Unity_UpdateCustom(int id, int custom);
 
-
-        #region 추가된 인터페이스 
         // 북리스트 받아오기 
         [OperationContract]
         [WebInvoke(UriTemplate = "Unity_BookSelect",
@@ -152,7 +159,7 @@ namespace WCF_RESTful
                    RequestFormat = WebMessageFormat.Json,
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-       
+
         string Unity_BookSelect(string title, string type);
 
         // 베스트셀러 받아오기  
@@ -164,25 +171,26 @@ namespace WCF_RESTful
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         List<string> Unity_Bestseller();
 
-
-        // 찜 추가
+        // 찜
         [OperationContract]
-        [WebInvoke(UriTemplate = "Unity_AddWish",
+        [WebInvoke(UriTemplate = "Unity_BookHeart",
                    Method = "POST",
                    RequestFormat = WebMessageFormat.Json,
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-        string Unity_AddWish(string W_id, string b_id);
+
+        string Unity_BookHeart(int W_id, int b_id);
 
         // 찜 해제
         [OperationContract]
-        [WebInvoke(UriTemplate = "Unity_RemoveWish",
+        [WebInvoke(UriTemplate = "Unity_BookUnHeart",
                    Method = "POST",
                    RequestFormat = WebMessageFormat.Json,
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-        string Unity_RemoveWish(string W_id, string b_id);
-        #endregion
+
+        string Unity_BookUnHeart(int W_id, int b_id);
+
         #endregion
     }
 }

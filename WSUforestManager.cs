@@ -13,6 +13,7 @@ namespace WCF_RESTful
         const string connstring = @"Server=DESKTOP-RMIQGMN\SQLEXPRESS;database=Test;uid=gugbab2;pwd=qwe";
         private SqlConnection con = new SqlConnection();
 
+
         #region 데이터베이스 
 
         private void DB_Open()

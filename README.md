@@ -7,7 +7,7 @@
 ### 전체 CREATE문
 - 우송대학교 학생
 
-CREATE TABLE WSUPeople
+- CREATE TABLE WSUPeople
     (
 W_ID int CONSTRAINT PK_WSUPeople PRIMARY KEY NOT NULL, 
 password VARCHAR(20) NOT NULL,

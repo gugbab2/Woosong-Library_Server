@@ -69,7 +69,7 @@ thumbnail VARCHAR(MAX) NOT NULL
     );
 ### INSERT문
 #### 우송대 관계자 리스트(WSUPeople) 
--INSERT INTO WSUPeople(W_ID, password, name, department)VALUES(11111111, 'A1', '추윤성', '사회복지학과'); 
+- INSERT INTO WSUPeople(W_ID, password, name, department)VALUES(11111111, 'A1', '추윤성', '사회복지학과'); 
 INSERT INTO WSUPeople(W_ID, password, Name, department)VALUES(11112222, 'B2', '복소연', '글로벌아동교육학과'); 
 INSERT INTO WSUPeople(W_ID, password, Name, department)VALUES(11113333, 'C3', '황보은성', '작업치료학과'); 
 INSERT INTO WSUPeople(W_ID, password, Name, department)VALUES(11114444, 'D4', '백정우', '언어치료청각재활학과'); 
@@ -95,7 +95,7 @@ INSERT INTO WSUPeople(W_ID, type, password, Name, department)VALUES(22229999, 'p
 INSERT INTO WSUPeople(W_ID, type, password, Name, department)VALUES(33330000, 'professor', 'T20', '장은남', '테크노미디어융합학부(게임멀티미디어전공)');
 
 #### 우송대 도서관에 있는 책 리스트(BookList) - <실물+전자>
--INSERT INTO WSUlibrary_BookList(type, title, contents, isbn, publishingdate, authors, publisher, translators, thumbnail, Status, Bestseller)
+- INSERT INTO WSUlibrary_BookList(type, title, contents, isbn, publishingdate, authors, publisher, translators, thumbnail, Status, Bestseller)
 VALUES('real',
 'C언어로쉽게풀어쓴자료구조', '개정판은초판과마찬가지로학습자들이좀더쉽게자료구조를이해할수있도록하자는것을목표',
 '9788970509716','20190222','천인국,공용해,하상호','생능출판','없음', 

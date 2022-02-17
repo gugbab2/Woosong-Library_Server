@@ -16,7 +16,7 @@ name VARCHAR(20) NOT NULL,
 department VARCHAR(50) NOT NULL
      ); 
 
- CREATE TABLE WSUforest
+- CREATE TABLE WSUforest
     (
 W_ID int CONSTRAINT FK_WSUforest FOREIGN KEY(W_ID) REFERENCES WSUPeople(W_ID) PRIMARY KEY NOT NULL,
 name VARCHAR(20) NOT NULL,
@@ -25,7 +25,7 @@ login int DEFAULT 0 NOT NULL,
 access int DEFAULT 0 NOT NULL
     ); 
 
-CREATE TABLE WSUlibrary_BookList
+- CREATE TABLE WSUlibrary_BookList
     (
 B_ID int IDENTITY(1,1) CONSTRAINT PK_BookList  PRIMARY KEY NOT NULL,
 type VARCHAR(20) NOT NULL,  
@@ -41,7 +41,7 @@ status VARCHAR(20) DEFAULT 'library' NOT NULL,
 bestseller int DEFAULT 0 NOT NULL
      ); 
 
- CREATE TABLE WSUlibrary_BookRental 
+- CREATE TABLE WSUlibrary_BookRental 
     (
 rentalcount int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 W_ID int CONSTRAINT FK_BookRental_W_ID FOREIGN KEY(W_ID) REFERENCES WSUPeople(W_ID) NOT NULL,
@@ -54,7 +54,7 @@ renewcount int NOT NULL DEFAULT 0,
 overduedays int NOT NULL DEFAULT 0
 );
 
-CREATE TABLE WSUlibrary_BookHeart
+- CREATE TABLE WSUlibrary_BookHeart
     (
 heartcount int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 W_ID int CONSTRAINT FK_BookHeart_W_ID FOREIGN KEY(W_ID) REFERENCES WSUPeople(W_ID) NOT NULL,

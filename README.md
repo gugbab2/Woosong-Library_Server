@@ -5,7 +5,7 @@
 
 ## DB 소개
 ### 전체 CREATE문
-__우송대 관계자__   
+__우송대 관계자__
 <br>
 - CREATE TABLE WSUPeople
     (
@@ -15,8 +15,9 @@ type VARCHAR(20) DEFAULT 'student' NOT NULL,
 name VARCHAR(20) NOT NULL, 
 department VARCHAR(50) NOT NULL
      ); 
-     
+<br>
 __메타버스__
+<br>
 - CREATE TABLE WSUforest
     (
 W_ID int CONSTRAINT FK_WSUforest FOREIGN KEY(W_ID) REFERENCES WSUPeople(W_ID) PRIMARY KEY NOT NULL,
@@ -25,8 +26,9 @@ character int DEFAULT 0 NOT NULL,
 login int DEFAULT 0 NOT NULL,
 access int DEFAULT 0 NOT NULL
     ); 
-    
+<br>
 __책 정보(실물, EBOOK)__
+<br>
 - CREATE TABLE WSUlibrary_BookList
     (
 B_ID int IDENTITY(1,1) CONSTRAINT PK_BookList  PRIMARY KEY NOT NULL,
@@ -42,8 +44,9 @@ thumbnail VARCHAR(MAX)NOT NULL,
 status VARCHAR(20) DEFAULT 'library' NOT NULL,
 bestseller int DEFAULT 0 NOT NULL
      ); 
-     
+ <br>
 __학생 대출__
+<br>
 - CREATE TABLE WSUlibrary_BookRental 
     (
 rentalcount int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -56,8 +59,9 @@ returndate date NOT NULL DEFAULT DATEADD(DAY, 10, GETDATE()),
 renewcount int NOT NULL DEFAULT 0,
 overduedays int NOT NULL DEFAULT 0
 );
-
+<br>
 __학생 위시리스트__
+<br>
 - CREATE TABLE WSUlibrary_BookHeart
     (
 heartcount int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -68,7 +72,7 @@ title VARCHAR(50) NOT NULL,
 authors VARCHAR(50) NOT NULL,
 thumbnail VARCHAR(MAX) NOT NULL
     );
-
+<br>
 ### INSERT문
 #### 우송대 관계자 리스트(WSUPeople) 
 

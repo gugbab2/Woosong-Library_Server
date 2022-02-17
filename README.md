@@ -5,7 +5,7 @@
 
 ## DB 소개
 ### 전체 CREATE문
-[]  우송대학교 학생
+__우송대학교 학생__
 
 - CREATE TABLE WSUPeople
     (

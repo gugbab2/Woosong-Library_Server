@@ -5,7 +5,7 @@
 
 ## DB 소개
 ### 전체 CREATE문
-__우송대 관계자__<br>
+__우송대 관계자__
 - CREATE TABLE WSUPeople
     (
 W_ID int CONSTRAINT PK_WSUPeople PRIMARY KEY NOT NULL, 
@@ -14,7 +14,8 @@ type VARCHAR(20) DEFAULT 'student' NOT NULL,
 name VARCHAR(20) NOT NULL, 
 department VARCHAR(50) NOT NULL
      ); 
-<br>__메타버스__
+
+__메타버스__
 - CREATE TABLE WSUforest
     (
 W_ID int CONSTRAINT FK_WSUforest FOREIGN KEY(W_ID) REFERENCES WSUPeople(W_ID) PRIMARY KEY NOT NULL,

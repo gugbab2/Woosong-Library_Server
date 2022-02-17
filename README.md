@@ -5,7 +5,7 @@
 
 ## DB 소개
 ### 전체 CREATE문
-__우송대 관계자__
+#### __우송대 관계자__
 - CREATE TABLE WSUPeople
     (
 W_ID int CONSTRAINT PK_WSUPeople PRIMARY KEY NOT NULL, 

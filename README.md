@@ -14,7 +14,7 @@ type VARCHAR(20) DEFAULT 'student' NOT NULL,
 name VARCHAR(20) NOT NULL, 
 department VARCHAR(50) NOT NULL
      ); 
-__메타버스__
+<br>__메타버스__
 - CREATE TABLE WSUforest
     (
 W_ID int CONSTRAINT FK_WSUforest FOREIGN KEY(W_ID) REFERENCES WSUPeople(W_ID) PRIMARY KEY NOT NULL,

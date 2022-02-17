@@ -5,7 +5,8 @@
 
 ## DB 소개
 ### 전체 CREATE문
-__우송대학교 학생__   
+__우송대 관계자__   
+<br>
 - CREATE TABLE WSUPeople
     (
 W_ID int CONSTRAINT PK_WSUPeople PRIMARY KEY NOT NULL, 
@@ -15,7 +16,7 @@ name VARCHAR(20) NOT NULL,
 department VARCHAR(50) NOT NULL
      ); 
      
-__메타버스 접속__
+__메타버스__
 - CREATE TABLE WSUforest
     (
 W_ID int CONSTRAINT FK_WSUforest FOREIGN KEY(W_ID) REFERENCES WSUPeople(W_ID) PRIMARY KEY NOT NULL,
@@ -42,7 +43,7 @@ status VARCHAR(20) DEFAULT 'library' NOT NULL,
 bestseller int DEFAULT 0 NOT NULL
      ); 
      
-__대출한 책들__
+__학생 대출__
 - CREATE TABLE WSUlibrary_BookRental 
     (
 rentalcount int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -56,7 +57,7 @@ renewcount int NOT NULL DEFAULT 0,
 overduedays int NOT NULL DEFAULT 0
 );
 
-__찜목록__
+__학생 위시리스트__
 - CREATE TABLE WSUlibrary_BookHeart
     (
 heartcount int IDENTITY(1,1) PRIMARY KEY NOT NULL,

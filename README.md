@@ -4,6 +4,7 @@
 - 아래에 있는 쿼리문을 실행하여 DB를 셋팅한 뒤 서버를 실행하면 됩니다. 
 
 ## DB 소개
+---
 
 ### 전체 CREATE문
 CREATE TABLE WSUPeople

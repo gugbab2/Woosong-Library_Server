@@ -14,6 +14,7 @@ type VARCHAR(20) DEFAULT 'student' NOT NULL,
 name VARCHAR(20) NOT NULL, 
 department VARCHAR(50) NOT NULL
      ); 
+     
 __메타버스 접속__
 - CREATE TABLE WSUforest
     (
@@ -23,6 +24,7 @@ character int DEFAULT 0 NOT NULL,
 login int DEFAULT 0 NOT NULL,
 access int DEFAULT 0 NOT NULL
     ); 
+    
 __책 정보(실물, EBOOK)__
 - CREATE TABLE WSUlibrary_BookList
     (
@@ -39,6 +41,7 @@ thumbnail VARCHAR(MAX)NOT NULL,
 status VARCHAR(20) DEFAULT 'library' NOT NULL,
 bestseller int DEFAULT 0 NOT NULL
      ); 
+     
 __대출한 책들__
 - CREATE TABLE WSUlibrary_BookRental 
     (
@@ -52,6 +55,7 @@ returndate date NOT NULL DEFAULT DATEADD(DAY, 10, GETDATE()),
 renewcount int NOT NULL DEFAULT 0,
 overduedays int NOT NULL DEFAULT 0
 );
+
 __찜목록__
 - CREATE TABLE WSUlibrary_BookHeart
     (

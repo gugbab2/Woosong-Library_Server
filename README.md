@@ -81,16 +81,12 @@ INSERT INTO WSUPeople(W_ID, password, Name, department)VALUES(11119999, 'I9', '�
 INSERT INTO WSUPeople(W_ID, password, Name, department)VALUES(22220000, 'J10', '신홍식', '간호학과'); 
 INSERT INTO WSUPeople(W_ID, password, Name, department)VALUES(22221111, 'K11', '오철진', '물리치료학과'); 
 INSERT INTO WSUPeople(W_ID, password, Name, department)VALUES(22222222, 'L12', '안경주', '기획팀'); 
-
 INSERT INTO WSUPeople(W_ID, type, password, Name, department)VALUES(22223333, 'employee', 'M13', '풍재아', '시설팀'); 
 INSERT INTO WSUPeople(W_ID, type, password, Name, department)VALUES(22224444, 'employee', 'N14', '사공남준', '외식조리학부(글로벌한식조리전공)');
- 
 INSERT INTO WSUPeople(W_ID, type, password, Name, department)VALUES(22225555, 'assistant', 'O15', '류도현', '외식조리학부(외식,조리경영전공)'); 
 INSERT INTO WSUPeople(W_ID, type, password, Name, department)VALUES(22226666, 'assistant', 'P16', '풍서준', '외식조리영양학부'); 
-
 INSERT INTO WSUPeople(W_ID, type, password, Name, department)VALUES(22227777, 'gradstudent', 'Q17', '권선호', '호텔관광경영학과'); 
 INSERT INTO WSUPeople(W_ID, type, password, Name, department)VALUES(22228888, 'gradstudent', 'R18', '조성철', 'IT융합학부(컴퓨터정보보안전공)'); 
-
 INSERT INTO WSUPeople(W_ID, type, password, Name, department)VALUES(22229999, 'professor', 'S19', '탁승우', 'IT융합학부(스마트IT보안전공)'); 
 INSERT INTO WSUPeople(W_ID, type, password, Name, department)VALUES(33330000, 'professor', 'T20', '장은남', '테크노미디어융합학부(게임멀티미디어전공)');
 
@@ -100,55 +96,46 @@ VALUES('real',
 'C언어로쉽게풀어쓴자료구조', '개정판은초판과마찬가지로학습자들이좀더쉽게자료구조를이해할수있도록하자는것을목표',
 '9788970509716','20190222','천인국,공용해,하상호','생능출판','없음', 
 'https://library.wsu.ac.kr/Sponge/Images/bookDefaults/MMbookdefaultsmall.png', 'library', 8 )
-
 INSERT INTO WSUlibrary_BookList(type, title, contents, isbn, publishingdate, authors, publisher, translators, thumbnail, Status, Bestseller)
 VALUES('e',
 '윤성우열혈C++ 프로그래밍', '2004년도에출간된윤성우저자「열혈강의C++ 프로그래밍」의개정판',
 '9788996094043', '20100512', '윤성우', '오렌지미디어', '없음', 
 'https://library.wsu.ac.kr/Sponge/Images/bookDefaults/CCbookdefaultsmall.png', 'library', 2 )
-
 INSERT INTO WSUlibrary_BookList(type, title, contents, isbn, publishingdate, authors, publisher, translators, thumbnail, Status, Bestseller)
 VALUES('real',
 '열혈강의자료구조', '자료구조의기본개념을쉽게이해할수있도록돕는책',
 '9788989345022', '20100115', '이상진', '프리렉', '없음', 
 'https://library.wsu.ac.kr/Sponge/Images/bookDefaults/MMbookdefaultsmall.png', 'library', 4 )
-
 INSERT INTO WSUlibrary_BookList(type, title, contents, isbn, publishingdate, authors, publisher, translators, thumbnail, Status, Bestseller)
 VALUES('e',
 '혼자공부하는자바', '혼자해도충분하다! 1:1 과외하듯배우는자바프로그래밍자습서(JAVA 8 &11 지원)',
 '9791162241875', '20190610', '신용권', '한빛미디어', '없음', 
 'https://library.wsu.ac.kr/Sponge/Images/bookDefaults/CCbookdefaultsmall.png', 'library', 5 )
-
 INSERT INTO WSUlibrary_BookList(type, title, contents, isbn, publishingdate, authors, publisher, translators, thumbnail,Status, Bestseller)
 VALUES('e',
 '조엘온소프트웨어', '엘온소프트웨어블러그에실렸던기사중에서유쾌하고핵심을찌르는베스트기사만뽑아내엮은책',
 '9788989975588', '20050407', '조엘스폴스키', '에이콘출판', '박재호', 
 'https://library.wsu.ac.kr/Sponge/Images/bookDefaults/CCbookdefaultsmall.png', 'library', 1 )
-
 INSERT INTO WSUlibrary_BookList(type, title, contents, isbn, publishingdate, authors, publisher, translators, thumbnail, Status, Bestseller)
 VALUES('real',
 'Do it! C언어입문', '실무년강의년, 현업프로그래머가원리부터알려주는C언어!',
 '9791187370703', '20170110', '김성엽', '이지스퍼블리싱', '없음', 
 'https://library.wsu.ac.kr/Sponge/Images/bookDefaults/MMbookdefaultsmall.png', 'library', 3 )
-
 INSERT INTO WSUlibrary_BookList(type, title, contents, isbn, publishingdate, authors, publisher, translators, thumbnail, Status, Bestseller)
 VALUES('e',
 'Do it! 점프투파이썬', '파이썬년연속베스트셀러위!《DO IT! 점프투파이썬》전면개정판출시!',
 '9791163030911', '20190620', '박응용', '이지스퍼블리싱', '없음', 
 'https://library.wsu.ac.kr/Sponge/Images/bookDefaults/CCbookdefaultsmall.png', 'library', 7 )
-
 INSERT INTO WSUlibrary_BookList(type, title, contents, isbn, publishingdate, authors, publisher, translators, thumbnail, Status, Bestseller)
 VALUES('real',
 '대체뭐가문제야', '‘문제’인문제를제대로발견하는방법!',
 '9788966260669', '20130125', '제럴드M. 와인버그,도널드고즈', '인사이트', '김준식', 
 'https://library.wsu.ac.kr/Sponge/Images/bookDefaults/MMbookdefaultsmall.png', 'library', 6 )
-
 INSERT INTO WSUlibrary_BookList(type, title, contents, isbn, publishingdate, authors, publisher, translators, thumbnail, Status, Bestseller)
 VALUES('real',
 '이것이C++이다', '저자가년간실무와강의를통해쌓은노하우를바탕으로C++를제대로입문할수있도록안내하는책',
 '9788968482465', '20160201', '최호성', '한빛미디어', '없음', 
 'https://library.wsu.ac.kr/Sponge/Images/bookDefaults/MMbookdefaultsmall.png', 'broken', 0 )
-
 INSERT INTO WSUlibrary_BookList(type, title, contents, isbn, publishingdate, authors, publisher, translators, thumbnail, Status, Bestseller)
 VALUES('e',
 'Java의정석', '자바의기초부터실전활용까지모두담다!',
